@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/s36peng/cpp2/ece650-a2.cpp
+fstream
+-
+iostream
+-
+iterator
+-
+list
+-
+sstream
+-
+tuple
+-
+vector
+-
+

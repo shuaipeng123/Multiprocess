@@ -102,6 +102,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named ece650-a2
+
+# Build rule for target.
+ece650-a2: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ece650-a2
+.PHONY : ece650-a2
+
+# fast build rule for target.
+ece650-a2/fast:
+	$(MAKE) -f CMakeFiles/ece650-a2.dir/build.make CMakeFiles/ece650-a2.dir/build
+.PHONY : ece650-a2/fast
+
+#=============================================================================
 # Target rules for targets named popen_test
 
 # Build rule for target.
@@ -152,6 +165,30 @@ using_pipe: cmake_check_build_system
 using_pipe/fast:
 	$(MAKE) -f CMakeFiles/using_pipe.dir/build.make CMakeFiles/using_pipe.dir/build
 .PHONY : using_pipe/fast
+
+ece650-a2.o: ece650-a2.cpp.o
+.PHONY : ece650-a2.o
+
+# target to build an object file
+ece650-a2.cpp.o:
+	$(MAKE) -f CMakeFiles/ece650-a2.dir/build.make CMakeFiles/ece650-a2.dir/ece650-a2.cpp.o
+.PHONY : ece650-a2.cpp.o
+
+ece650-a2.i: ece650-a2.cpp.i
+.PHONY : ece650-a2.i
+
+# target to preprocess a source file
+ece650-a2.cpp.i:
+	$(MAKE) -f CMakeFiles/ece650-a2.dir/build.make CMakeFiles/ece650-a2.dir/ece650-a2.cpp.i
+.PHONY : ece650-a2.cpp.i
+
+ece650-a2.s: ece650-a2.cpp.s
+.PHONY : ece650-a2.s
+
+# target to generate assembly for a file
+ece650-a2.cpp.s:
+	$(MAKE) -f CMakeFiles/ece650-a2.dir/build.make CMakeFiles/ece650-a2.dir/ece650-a2.cpp.s
+.PHONY : ece650-a2.cpp.s
 
 popen_test.o: popen_test.cpp.o
 .PHONY : popen_test.o
@@ -255,12 +292,16 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... ece650-a2"
 	@echo "... edit_cache"
 	@echo "... popen_test"
 	@echo "... rebuild_cache"
 	@echo "... using_exec"
 	@echo "... using_getopt"
 	@echo "... using_pipe"
+	@echo "... ece650-a2.o"
+	@echo "... ece650-a2.i"
+	@echo "... ece650-a2.s"
 	@echo "... popen_test.o"
 	@echo "... popen_test.i"
 	@echo "... popen_test.s"

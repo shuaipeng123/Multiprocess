@@ -56,13 +56,48 @@ CMAKE_SOURCE_DIR = /home/s36peng/cpp2
 CMAKE_BINARY_DIR = /home/s36peng/cpp2/build
 
 #=============================================================================
+# Target rules for target CMakeFiles/ece650-a2.dir
+
+# All Build rule for target.
+CMakeFiles/ece650-a2.dir/all:
+	$(MAKE) -f CMakeFiles/ece650-a2.dir/build.make CMakeFiles/ece650-a2.dir/depend
+	$(MAKE) -f CMakeFiles/ece650-a2.dir/build.make CMakeFiles/ece650-a2.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/s36peng/cpp2/build/CMakeFiles  1
+	@echo "Built target ece650-a2"
+.PHONY : CMakeFiles/ece650-a2.dir/all
+
+# Include target in all.
+all: CMakeFiles/ece650-a2.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/ece650-a2.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/s36peng/cpp2/build/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ece650-a2.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/s36peng/cpp2/build/CMakeFiles 0
+.PHONY : CMakeFiles/ece650-a2.dir/rule
+
+# Convenience name for target.
+ece650-a2: CMakeFiles/ece650-a2.dir/rule
+.PHONY : ece650-a2
+
+# clean rule for target.
+CMakeFiles/ece650-a2.dir/clean:
+	$(MAKE) -f CMakeFiles/ece650-a2.dir/build.make CMakeFiles/ece650-a2.dir/clean
+.PHONY : CMakeFiles/ece650-a2.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/ece650-a2.dir/clean
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/popen_test.dir
 
 # All Build rule for target.
 CMakeFiles/popen_test.dir/all:
 	$(MAKE) -f CMakeFiles/popen_test.dir/build.make CMakeFiles/popen_test.dir/depend
 	$(MAKE) -f CMakeFiles/popen_test.dir/build.make CMakeFiles/popen_test.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/s36peng/cpp2/build/CMakeFiles  1
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/s36peng/cpp2/build/CMakeFiles  2
 	@echo "Built target popen_test"
 .PHONY : CMakeFiles/popen_test.dir/all
 
@@ -97,7 +132,7 @@ clean: CMakeFiles/popen_test.dir/clean
 CMakeFiles/using_exec.dir/all:
 	$(MAKE) -f CMakeFiles/using_exec.dir/build.make CMakeFiles/using_exec.dir/depend
 	$(MAKE) -f CMakeFiles/using_exec.dir/build.make CMakeFiles/using_exec.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/s36peng/cpp2/build/CMakeFiles  2
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/s36peng/cpp2/build/CMakeFiles  3
 	@echo "Built target using_exec"
 .PHONY : CMakeFiles/using_exec.dir/all
 
@@ -132,7 +167,7 @@ clean: CMakeFiles/using_exec.dir/clean
 CMakeFiles/using_getopt.dir/all:
 	$(MAKE) -f CMakeFiles/using_getopt.dir/build.make CMakeFiles/using_getopt.dir/depend
 	$(MAKE) -f CMakeFiles/using_getopt.dir/build.make CMakeFiles/using_getopt.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/s36peng/cpp2/build/CMakeFiles  3
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/s36peng/cpp2/build/CMakeFiles  4
 	@echo "Built target using_getopt"
 .PHONY : CMakeFiles/using_getopt.dir/all
 
@@ -167,7 +202,7 @@ clean: CMakeFiles/using_getopt.dir/clean
 CMakeFiles/using_pipe.dir/all:
 	$(MAKE) -f CMakeFiles/using_pipe.dir/build.make CMakeFiles/using_pipe.dir/depend
 	$(MAKE) -f CMakeFiles/using_pipe.dir/build.make CMakeFiles/using_pipe.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/s36peng/cpp2/build/CMakeFiles  4
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/s36peng/cpp2/build/CMakeFiles  5
 	@echo "Built target using_pipe"
 .PHONY : CMakeFiles/using_pipe.dir/all
 
