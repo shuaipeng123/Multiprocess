@@ -34,11 +34,14 @@ RM = /usr/bin/cmake -E remove -f
 # Escaping for special characters.
 EQUALS = =
 
+# The program to use to edit the cache.
+CMAKE_EDIT_COMMAND = /usr/bin/ccmake
+
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/shuai/cpp_2
+CMAKE_SOURCE_DIR = /home/s36peng/cpp2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/shuai/cpp_2/build
+CMAKE_BINARY_DIR = /home/s36peng/cpp2/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/popen_test.dir/depend.make
@@ -51,17 +54,17 @@ include CMakeFiles/popen_test.dir/flags.make
 
 CMakeFiles/popen_test.dir/popen_test.cpp.o: CMakeFiles/popen_test.dir/flags.make
 CMakeFiles/popen_test.dir/popen_test.cpp.o: ../popen_test.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/shuai/cpp_2/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/s36peng/cpp2/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/popen_test.dir/popen_test.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/popen_test.dir/popen_test.cpp.o -c /home/shuai/cpp_2/popen_test.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/popen_test.dir/popen_test.cpp.o -c /home/s36peng/cpp2/popen_test.cpp
 
 CMakeFiles/popen_test.dir/popen_test.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/popen_test.dir/popen_test.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/shuai/cpp_2/popen_test.cpp > CMakeFiles/popen_test.dir/popen_test.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/s36peng/cpp2/popen_test.cpp > CMakeFiles/popen_test.dir/popen_test.cpp.i
 
 CMakeFiles/popen_test.dir/popen_test.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/popen_test.dir/popen_test.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/shuai/cpp_2/popen_test.cpp -o CMakeFiles/popen_test.dir/popen_test.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/s36peng/cpp2/popen_test.cpp -o CMakeFiles/popen_test.dir/popen_test.cpp.s
 
 CMakeFiles/popen_test.dir/popen_test.cpp.o.requires:
 .PHONY : CMakeFiles/popen_test.dir/popen_test.cpp.o.requires
@@ -97,6 +100,6 @@ CMakeFiles/popen_test.dir/clean:
 .PHONY : CMakeFiles/popen_test.dir/clean
 
 CMakeFiles/popen_test.dir/depend:
-	cd /home/shuai/cpp_2/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/shuai/cpp_2 /home/shuai/cpp_2 /home/shuai/cpp_2/build /home/shuai/cpp_2/build /home/shuai/cpp_2/build/CMakeFiles/popen_test.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/s36peng/cpp2/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/s36peng/cpp2 /home/s36peng/cpp2 /home/s36peng/cpp2/build /home/s36peng/cpp2/build /home/s36peng/cpp2/build/CMakeFiles/popen_test.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/popen_test.dir/depend
 

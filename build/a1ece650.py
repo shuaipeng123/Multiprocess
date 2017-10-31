@@ -174,6 +174,7 @@ def run(input, out, err):
 					if(l[0]!=0 and l[1]!=0):
 						out.write("  <{0},{1}>\n".format(l[0],l[1]))
 				out.write("}\n")
+				out.flush()
 				del line_segment[:]
 				del line_segment_ver[:]
 				vertex.clear()
