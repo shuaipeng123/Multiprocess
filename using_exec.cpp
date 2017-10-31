@@ -4,6 +4,19 @@
 #include<sys/wait.h>
 #include <signal.h>
 #include<vector>
+int procB(void) {
+    // Process B writing to C
+    while (!std::cin.eof()) {
+        // read a line of input until EOL and store in a string
+        std::string line;
+        std::getline(std::cin, line);
+	std::cout <<"B:"<< line << std::endl;
+        if (line.size () > 0)
+            std::cout <<"B:"<< line << std::endl;
+    }
+    std::cout << "[B] saw EOF" << std::endl;
+    return 0;
+}
 
 int main(void) {
 	std::vector<pid_t> kids;
