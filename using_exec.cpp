@@ -43,6 +43,17 @@ int main(void) {
 
     pid_t kid;
     kid = fork ();
+	if (kid == 0) {
+	  dup2(AtoC[1],STDOUT_FILENO);
+    close(AtoC[0]);
+    close(AtoC[1]);
+ 
+        //sleep (4);
+        execlp ("./using_getopt", "rgen", (char*) NULL);
+        // execl("/bin/ls", "ls", "-l", nullptr);
+        perror ("Error from arie");
+        return 1;
+    }
     if (kid == 0) {
 	dup2(AtoC[0],STDIN_FILENO);
 	close(AtoC[1]);
@@ -56,15 +67,7 @@ dup2(AtoB[1],STDOUT_FILENO);
         perror ("Error from arie");
         return 1;
     }
-    dup2(AtoC[1],STDOUT_FILENO);
-    close(AtoC[0]);
-    close(AtoC[1]);
-    std::cout<<"a \"Weber Street\" (2,-1) (2,2) (5,5) (5,6) (3,8)\na \"King Street S\" (4,2) (4,8)\na \"Davenport Road\" (1,4) (5,8)\ng\n";
-	sleep(2);
-	std::cout<<"a \"Weber Street\" (1,-1) (2,2) (5,5) (5,6) (3,8)\na \"King Street S\" (4,2) (4,8)\na \"Davenport Road\" (1,4) (5,8)\ng\n";
-	sleep(3);
-	std::cout<<"sending \n";
-	std::cout<<'\0';
+  
 
 	std::cout <<"B start:"<<  std::endl;
  	
