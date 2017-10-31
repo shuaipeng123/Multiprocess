@@ -4,32 +4,7 @@
 #include<sys/wait.h>
 #include <signal.h>
 #include<vector>
-/// Entry point of process B
-int procB(void) {
-    // Process B writing to C
-    while (!std::cin.eof()) {
-        // read a line of input until EOL and store in a string
-        std::string line;
-        std::getline(std::cin, line);
-	std::cout <<"B:"<< line << std::endl;
-        if (line.size () > 0)
-            std::cout <<"B:"<< line << std::endl;
-    }
-    std::cout << std::cin.eof() << std::endl;
-    return 0;
-}
-int procC(void) {
-    // Process C reading from both A and B
-    while (!std::cin.eof()) {
-        // read a line of input until EOL and store in a string
-        std::string line;
-        std::getline(std::cin, line);
-        if (line.size () > 0)
-            std::cout << "[C]: " << line << std::endl;
-    }
-    std::cout << "[C] saw EOF" << std::endl;
-    return 0;
-}
+
 int main(void) {
 	std::vector<pid_t> kids;
 	int AtoB[2];
@@ -86,8 +61,8 @@ int main(void) {
         //sleep (4);
         
         execlp("./ece650-a2", "a2", nullptr);
-        
-        return procC();
+        perror ("Error from arie");
+        return 1;
     }
 	else if (kid < 0) {
         std::cerr << "Error: could not fork\n";
