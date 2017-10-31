@@ -14,8 +14,7 @@
     int lint_value=5;
  
     int cint_value=20;
-static const char alp[]="0123456789 "
-"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+static const char alp[]="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 "abcdefghijklmnopqrstuvwxyz";
 
 
@@ -53,7 +52,7 @@ int main (int argc, char **argv)
     	while( count_line_segment>0){
 	    int x=random_n(cint_value);
 	    int y=random_n(cint_value);
-	    std::cout<<"("<<x<<","<<y<<")";
+	    std::cout<<" ("<<x<<","<<y<<")";
 		count_line_segment--;
 	}
 	std::cout<<std::endl;

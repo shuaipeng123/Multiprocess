@@ -3,6 +3,7 @@
 #include<sys/types.h>
 #include<sys/wait.h>
 #include <signal.h>
+#include<vector>
 /// Entry point of process B
 int procB(void) {
     // Process B writing to C
@@ -93,7 +94,7 @@ int main(void) {
         return 1;
     }
 	kids.push_back(kid);
-	child_pid = 0;
+	kid = 0;
 	dup2(AtoB[1],STDOUT_FILENO);
     close(AtoB[0]);
     close(AtoB[1]);
