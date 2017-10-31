@@ -179,10 +179,11 @@ def run(input, out, err):
 				for l in line_segment_ver:
 					if(l[0]!=0 and l[1]!=0):
 						if(f==1):
-							out.write("<{0},{1}>".format(l[0],l[1]))
+							out.write("<{0},{1}>".format(l[0]-1,l[1]-1))
 						else:
-							out.write(",<{0},{1}>".format(l[0],l[1]))
-					f++
+							out.write(",<{0},{1}>".format(l[0]-1,l[1]-1))
+					f=f+1
+>>>>>>> origin/master
 				out.write("}\n")
 				out.flush()
 				del line_segment[:]
