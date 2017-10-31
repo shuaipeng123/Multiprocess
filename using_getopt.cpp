@@ -43,24 +43,24 @@ int main (int argc, char **argv)
 	}
   	int count_line_segment=nint_value;
     while(sint_value>0){
-	std::cout<<"strings:"<<std::endl;
-	 for(int z=0; z < string_length; z++)
+	    std::cout<<"a \"";
+	    for(int z=0; z < string_length; z++)
     	{
         std::cout<< genRandom();
 
     	}
-	std::cout<<std::endl;
-	while( count_line_segment>0){
-	int x=random_n(cint_value);
-	int y=random_n(cint_value);
-	std::cout<<"tuples for "<<sint_value<<"street"<<std::endl;
-	std::cout<<"("<<x<<","<<y<<")"<<std::endl;
-		 count_line_segment--;
+	    std::cout<<"\"";
+    	while( count_line_segment>0){
+	    int x=random_n(cint_value);
+	    int y=random_n(cint_value);
+	    std::cout<<"("<<x<<","<<y<<")";
+		count_line_segment--;
 	}
-	 count_line_segment=nint_value;
+	std::cout<<std::endl;
+	count_line_segment=nint_value;
 	sint_value--;
     }
-
+    std::cout<<"g"<<std::endl;
     return 0;
 }
 
