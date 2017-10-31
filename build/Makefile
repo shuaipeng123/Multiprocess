@@ -99,6 +99,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named popen_test
+
+# Build rule for target.
+popen_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 popen_test
+.PHONY : popen_test
+
+# fast build rule for target.
+popen_test/fast:
+	$(MAKE) -f CMakeFiles/popen_test.dir/build.make CMakeFiles/popen_test.dir/build
+.PHONY : popen_test/fast
+
+#=============================================================================
 # Target rules for targets named using_exec
 
 # Build rule for target.
@@ -136,6 +149,30 @@ using_pipe: cmake_check_build_system
 using_pipe/fast:
 	$(MAKE) -f CMakeFiles/using_pipe.dir/build.make CMakeFiles/using_pipe.dir/build
 .PHONY : using_pipe/fast
+
+popen_test.o: popen_test.cpp.o
+.PHONY : popen_test.o
+
+# target to build an object file
+popen_test.cpp.o:
+	$(MAKE) -f CMakeFiles/popen_test.dir/build.make CMakeFiles/popen_test.dir/popen_test.cpp.o
+.PHONY : popen_test.cpp.o
+
+popen_test.i: popen_test.cpp.i
+.PHONY : popen_test.i
+
+# target to preprocess a source file
+popen_test.cpp.i:
+	$(MAKE) -f CMakeFiles/popen_test.dir/build.make CMakeFiles/popen_test.dir/popen_test.cpp.i
+.PHONY : popen_test.cpp.i
+
+popen_test.s: popen_test.cpp.s
+.PHONY : popen_test.s
+
+# target to generate assembly for a file
+popen_test.cpp.s:
+	$(MAKE) -f CMakeFiles/popen_test.dir/build.make CMakeFiles/popen_test.dir/popen_test.cpp.s
+.PHONY : popen_test.cpp.s
 
 using_exec.o: using_exec.cpp.o
 .PHONY : using_exec.o
@@ -216,10 +253,14 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... popen_test"
 	@echo "... rebuild_cache"
 	@echo "... using_exec"
 	@echo "... using_getopt"
 	@echo "... using_pipe"
+	@echo "... popen_test.o"
+	@echo "... popen_test.i"
+	@echo "... popen_test.s"
 	@echo "... using_exec.o"
 	@echo "... using_exec.i"
 	@echo "... using_exec.s"

@@ -12,6 +12,6 @@ set (CMAKE_CXX_FLAGS "-std=c++11 -Wall ${CMAKE_CXX_FLAGS}")
 add_executable(using_pipe using_pipe.cpp)
 add_executable(using_exec using_exec.cpp)
 add_executable(using_getopt using_getopt.cpp)
-
+add_executable(popen_test popen_test.cpp)
 
 

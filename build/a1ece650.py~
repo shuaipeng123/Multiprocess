@@ -79,7 +79,7 @@ def savelines(l1,l2):
 def run(input, out, err):
 	while True:
 		line=input.readline()
-		if line=='\n':
+		if line=='':
 			break
 		try:    
                         print line

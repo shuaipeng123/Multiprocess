@@ -53,13 +53,48 @@ CMAKE_SOURCE_DIR = /home/shuai/cpp_2
 CMAKE_BINARY_DIR = /home/shuai/cpp_2/build
 
 #=============================================================================
+# Target rules for target CMakeFiles/popen_test.dir
+
+# All Build rule for target.
+CMakeFiles/popen_test.dir/all:
+	$(MAKE) -f CMakeFiles/popen_test.dir/build.make CMakeFiles/popen_test.dir/depend
+	$(MAKE) -f CMakeFiles/popen_test.dir/build.make CMakeFiles/popen_test.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/shuai/cpp_2/build/CMakeFiles  1
+	@echo "Built target popen_test"
+.PHONY : CMakeFiles/popen_test.dir/all
+
+# Include target in all.
+all: CMakeFiles/popen_test.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/popen_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shuai/cpp_2/build/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/popen_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shuai/cpp_2/build/CMakeFiles 0
+.PHONY : CMakeFiles/popen_test.dir/rule
+
+# Convenience name for target.
+popen_test: CMakeFiles/popen_test.dir/rule
+.PHONY : popen_test
+
+# clean rule for target.
+CMakeFiles/popen_test.dir/clean:
+	$(MAKE) -f CMakeFiles/popen_test.dir/build.make CMakeFiles/popen_test.dir/clean
+.PHONY : CMakeFiles/popen_test.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/popen_test.dir/clean
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/using_exec.dir
 
 # All Build rule for target.
 CMakeFiles/using_exec.dir/all:
 	$(MAKE) -f CMakeFiles/using_exec.dir/build.make CMakeFiles/using_exec.dir/depend
 	$(MAKE) -f CMakeFiles/using_exec.dir/build.make CMakeFiles/using_exec.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/shuai/cpp_2/build/CMakeFiles  1
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/shuai/cpp_2/build/CMakeFiles  2
 	@echo "Built target using_exec"
 .PHONY : CMakeFiles/using_exec.dir/all
 
@@ -94,7 +129,7 @@ clean: CMakeFiles/using_exec.dir/clean
 CMakeFiles/using_getopt.dir/all:
 	$(MAKE) -f CMakeFiles/using_getopt.dir/build.make CMakeFiles/using_getopt.dir/depend
 	$(MAKE) -f CMakeFiles/using_getopt.dir/build.make CMakeFiles/using_getopt.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/shuai/cpp_2/build/CMakeFiles  2
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/shuai/cpp_2/build/CMakeFiles  3
 	@echo "Built target using_getopt"
 .PHONY : CMakeFiles/using_getopt.dir/all
 
@@ -129,7 +164,7 @@ clean: CMakeFiles/using_getopt.dir/clean
 CMakeFiles/using_pipe.dir/all:
 	$(MAKE) -f CMakeFiles/using_pipe.dir/build.make CMakeFiles/using_pipe.dir/depend
 	$(MAKE) -f CMakeFiles/using_pipe.dir/build.make CMakeFiles/using_pipe.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/shuai/cpp_2/build/CMakeFiles  3
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/shuai/cpp_2/build/CMakeFiles  4
 	@echo "Built target using_pipe"
 .PHONY : CMakeFiles/using_pipe.dir/all
 

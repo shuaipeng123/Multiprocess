@@ -1,3 +1,4 @@
+/home/shuai/cpp_2/build/CMakeFiles/popen_test.dir
 /home/shuai/cpp_2/build/CMakeFiles/using_exec.dir
 /home/shuai/cpp_2/build/CMakeFiles/using_getopt.dir
 /home/shuai/cpp_2/build/CMakeFiles/using_pipe.dir

@@ -87,7 +87,7 @@ int main(void)
         dup2(ABtoC[0], STDIN_FILENO);
         close(ABtoC[1]);
         close(ABtoC[0]);
-	std::cout<<"c start"<<std::endl;
+	std::cout<<"c start:";
         // start process C
         return procC();
     }
