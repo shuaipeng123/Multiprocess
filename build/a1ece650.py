@@ -183,7 +183,6 @@ def run(input, out, err):
 						else:
 							out.write(",<{0},{1}>".format(l[0]-1,l[1]-1))
 					f=f+1
->>>>>>> origin/master
 				out.write("}\n")
 				out.flush()
 				del line_segment[:]
