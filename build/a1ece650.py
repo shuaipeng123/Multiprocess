@@ -165,7 +165,7 @@ def run(input, out, err):
 						if not (checkIfpointIsIntersection(line_segment[position].src) or checkIfpointIsIntersection(line_segment[position].dst)):
 							line_segment[position]=0
 				transform_line_to_vertex_res()
-				out.write("V "+str(len(vertex.items())))
+				out.write("V "+str(len(vertex.items()))+"\n")
 				#for  k,v in vertex.items():
 				#	out.write("{0}:  ({1:.2f}, {2:.2f})\n".format(k,v.x,v.y))
 				#out.write("}\n")
@@ -182,6 +182,7 @@ def run(input, out, err):
 							out.write("<{0},{1}>".format(l[0],l[1]))
 						else:
 							out.write(",<{0},{1}>".format(l[0],l[1]))
+					f++
 				out.write("}\n")
 				out.flush()
 				del line_segment[:]

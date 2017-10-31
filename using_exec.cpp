@@ -65,7 +65,19 @@ int main(void) {
   
 	kids.push_back(kid);
 	std::cout <<"B start:"<<  std::endl;
- 	
+	write_a2=popen("./ece650-a2","w");
+	kid=fork();
+	if(kid==0){
+		fpin=fdopen(AtoB[0],"r")
+	while(fgets(line, MAXLINE, fpin) != NULL)
+			std::cout<<line;
+			fputs(line,write_a2);
+			fflush();
+		}
+			
+	}
+	
+ 	/*
     kid = fork ();
     if (kid == 0) {
 		dup2(AtoB[0],STDIN_FILENO);
@@ -81,6 +93,7 @@ int main(void) {
         std::cerr << "Error: could not fork\n";
         return 1;
     }
+	*/
 	kids.push_back(kid);
 	kid = 0;
 	dup2(AtoB[1],STDOUT_FILENO);
