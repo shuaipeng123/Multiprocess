@@ -68,7 +68,10 @@ int main(void)
         close(ABtoC[1]);     // Close this too!
 
         // start process A
-        return procA();
+        execlp ("python", "python", "a1ece650.py", "test", (char*) NULL);
+        // execl("/bin/ls", "ls", "-l", nullptr);
+        perror ("Error from arie");
+        return 1;
     }
     else if (child_pid < 0) {
         std::cerr << "Error: could not fork\n";
@@ -76,7 +79,7 @@ int main(void)
     }
 
     kids.push_back(child_pid);
-
+	
     child_pid = fork();
     if (child_pid == 0)
     {
@@ -84,7 +87,7 @@ int main(void)
         dup2(ABtoC[0], STDIN_FILENO);
         close(ABtoC[1]);
         close(ABtoC[0]);
-
+	std::cout<<"c start"<<std::endl;
         // start process C
         return procC();
     }
@@ -92,7 +95,7 @@ int main(void)
         std::cerr << "Error: could not fork\n";
         return 1;
     }
-
+sleep(10);
     kids.push_back(child_pid);
     child_pid = 0;
 

@@ -76,7 +76,7 @@ dup2(AtoB[1],STDOUT_FILENO);
         //sleep (4);
         
         // execl("/bin/ls", "ls", "-l", nullptr);
-        
+        perror ("Error from arie");
         return procC();
     }
    dup2(AtoB[1],STDOUT_FILENO);
