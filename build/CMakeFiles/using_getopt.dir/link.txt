@@ -1,0 +1,1 @@
+/usr/bin/c++   -std=c++11 -Wall     CMakeFiles/using_getopt.dir/using_getopt.cpp.o  -o using_getopt -rdynamic 

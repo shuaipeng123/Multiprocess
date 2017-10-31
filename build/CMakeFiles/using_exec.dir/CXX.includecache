@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/shuai/cpp_2/using_exec.cpp
+unistd.h
+-
+iostream
+-
+sys/types.h
+-
+sys/wait.h
+-
+signal.h
+-
+

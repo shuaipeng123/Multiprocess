@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/shuai/cpp_2/using_pipe.cpp
+vector
+-
+sys/types.h
+-
+sys/wait.h
+-
+unistd.h
+-
+signal.h
+-
+iostream
+-
+
