@@ -38,22 +38,19 @@ RM = /usr/bin/cmake -E remove -f
 # Escaping for special characters.
 EQUALS = =
 
-# The program to use to edit the cache.
-CMAKE_EDIT_COMMAND = /usr/bin/ccmake
-
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/s36peng/cpp2
+CMAKE_SOURCE_DIR = /home/shuai/cpp_2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/s36peng/cpp2/build
+CMAKE_BINARY_DIR = /home/shuai/cpp_2/build
 
 #=============================================================================
 # Targets provided globally by CMake.
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running interactive CMake command-line interface..."
+	/usr/bin/cmake -i .
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -72,9 +69,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/s36peng/cpp2/build/CMakeFiles /home/s36peng/cpp2/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shuai/cpp_2/build/CMakeFiles /home/shuai/cpp_2/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/s36peng/cpp2/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shuai/cpp_2/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -115,6 +112,19 @@ ece650-a2/fast:
 .PHONY : ece650-a2/fast
 
 #=============================================================================
+# Target rules for targets named ece650-a3
+
+# Build rule for target.
+ece650-a3: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ece650-a3
+.PHONY : ece650-a3
+
+# fast build rule for target.
+ece650-a3/fast:
+	$(MAKE) -f CMakeFiles/ece650-a3.dir/build.make CMakeFiles/ece650-a3.dir/build
+.PHONY : ece650-a3/fast
+
+#=============================================================================
 # Target rules for targets named popen_test
 
 # Build rule for target.
@@ -128,30 +138,17 @@ popen_test/fast:
 .PHONY : popen_test/fast
 
 #=============================================================================
-# Target rules for targets named using_exec
+# Target rules for targets named rgen
 
 # Build rule for target.
-using_exec: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 using_exec
-.PHONY : using_exec
+rgen: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 rgen
+.PHONY : rgen
 
 # fast build rule for target.
-using_exec/fast:
-	$(MAKE) -f CMakeFiles/using_exec.dir/build.make CMakeFiles/using_exec.dir/build
-.PHONY : using_exec/fast
-
-#=============================================================================
-# Target rules for targets named using_getopt
-
-# Build rule for target.
-using_getopt: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 using_getopt
-.PHONY : using_getopt
-
-# fast build rule for target.
-using_getopt/fast:
-	$(MAKE) -f CMakeFiles/using_getopt.dir/build.make CMakeFiles/using_getopt.dir/build
-.PHONY : using_getopt/fast
+rgen/fast:
+	$(MAKE) -f CMakeFiles/rgen.dir/build.make CMakeFiles/rgen.dir/build
+.PHONY : rgen/fast
 
 #=============================================================================
 # Target rules for targets named using_pipe
@@ -190,6 +187,30 @@ ece650-a2.cpp.s:
 	$(MAKE) -f CMakeFiles/ece650-a2.dir/build.make CMakeFiles/ece650-a2.dir/ece650-a2.cpp.s
 .PHONY : ece650-a2.cpp.s
 
+ece650-a3.o: ece650-a3.cpp.o
+.PHONY : ece650-a3.o
+
+# target to build an object file
+ece650-a3.cpp.o:
+	$(MAKE) -f CMakeFiles/ece650-a3.dir/build.make CMakeFiles/ece650-a3.dir/ece650-a3.cpp.o
+.PHONY : ece650-a3.cpp.o
+
+ece650-a3.i: ece650-a3.cpp.i
+.PHONY : ece650-a3.i
+
+# target to preprocess a source file
+ece650-a3.cpp.i:
+	$(MAKE) -f CMakeFiles/ece650-a3.dir/build.make CMakeFiles/ece650-a3.dir/ece650-a3.cpp.i
+.PHONY : ece650-a3.cpp.i
+
+ece650-a3.s: ece650-a3.cpp.s
+.PHONY : ece650-a3.s
+
+# target to generate assembly for a file
+ece650-a3.cpp.s:
+	$(MAKE) -f CMakeFiles/ece650-a3.dir/build.make CMakeFiles/ece650-a3.dir/ece650-a3.cpp.s
+.PHONY : ece650-a3.cpp.s
+
 popen_test.o: popen_test.cpp.o
 .PHONY : popen_test.o
 
@@ -214,53 +235,29 @@ popen_test.cpp.s:
 	$(MAKE) -f CMakeFiles/popen_test.dir/build.make CMakeFiles/popen_test.dir/popen_test.cpp.s
 .PHONY : popen_test.cpp.s
 
-using_exec.o: using_exec.cpp.o
-.PHONY : using_exec.o
+rgen.o: rgen.cpp.o
+.PHONY : rgen.o
 
 # target to build an object file
-using_exec.cpp.o:
-	$(MAKE) -f CMakeFiles/using_exec.dir/build.make CMakeFiles/using_exec.dir/using_exec.cpp.o
-.PHONY : using_exec.cpp.o
+rgen.cpp.o:
+	$(MAKE) -f CMakeFiles/rgen.dir/build.make CMakeFiles/rgen.dir/rgen.cpp.o
+.PHONY : rgen.cpp.o
 
-using_exec.i: using_exec.cpp.i
-.PHONY : using_exec.i
-
-# target to preprocess a source file
-using_exec.cpp.i:
-	$(MAKE) -f CMakeFiles/using_exec.dir/build.make CMakeFiles/using_exec.dir/using_exec.cpp.i
-.PHONY : using_exec.cpp.i
-
-using_exec.s: using_exec.cpp.s
-.PHONY : using_exec.s
-
-# target to generate assembly for a file
-using_exec.cpp.s:
-	$(MAKE) -f CMakeFiles/using_exec.dir/build.make CMakeFiles/using_exec.dir/using_exec.cpp.s
-.PHONY : using_exec.cpp.s
-
-using_getopt.o: using_getopt.cpp.o
-.PHONY : using_getopt.o
-
-# target to build an object file
-using_getopt.cpp.o:
-	$(MAKE) -f CMakeFiles/using_getopt.dir/build.make CMakeFiles/using_getopt.dir/using_getopt.cpp.o
-.PHONY : using_getopt.cpp.o
-
-using_getopt.i: using_getopt.cpp.i
-.PHONY : using_getopt.i
+rgen.i: rgen.cpp.i
+.PHONY : rgen.i
 
 # target to preprocess a source file
-using_getopt.cpp.i:
-	$(MAKE) -f CMakeFiles/using_getopt.dir/build.make CMakeFiles/using_getopt.dir/using_getopt.cpp.i
-.PHONY : using_getopt.cpp.i
+rgen.cpp.i:
+	$(MAKE) -f CMakeFiles/rgen.dir/build.make CMakeFiles/rgen.dir/rgen.cpp.i
+.PHONY : rgen.cpp.i
 
-using_getopt.s: using_getopt.cpp.s
-.PHONY : using_getopt.s
+rgen.s: rgen.cpp.s
+.PHONY : rgen.s
 
 # target to generate assembly for a file
-using_getopt.cpp.s:
-	$(MAKE) -f CMakeFiles/using_getopt.dir/build.make CMakeFiles/using_getopt.dir/using_getopt.cpp.s
-.PHONY : using_getopt.cpp.s
+rgen.cpp.s:
+	$(MAKE) -f CMakeFiles/rgen.dir/build.make CMakeFiles/rgen.dir/rgen.cpp.s
+.PHONY : rgen.cpp.s
 
 using_pipe.o: using_pipe.cpp.o
 .PHONY : using_pipe.o
@@ -293,24 +290,24 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... ece650-a2"
+	@echo "... ece650-a3"
 	@echo "... edit_cache"
 	@echo "... popen_test"
 	@echo "... rebuild_cache"
-	@echo "... using_exec"
-	@echo "... using_getopt"
+	@echo "... rgen"
 	@echo "... using_pipe"
 	@echo "... ece650-a2.o"
 	@echo "... ece650-a2.i"
 	@echo "... ece650-a2.s"
+	@echo "... ece650-a3.o"
+	@echo "... ece650-a3.i"
+	@echo "... ece650-a3.s"
 	@echo "... popen_test.o"
 	@echo "... popen_test.i"
 	@echo "... popen_test.s"
-	@echo "... using_exec.o"
-	@echo "... using_exec.i"
-	@echo "... using_exec.s"
-	@echo "... using_getopt.o"
-	@echo "... using_getopt.i"
-	@echo "... using_getopt.s"
+	@echo "... rgen.o"
+	@echo "... rgen.i"
+	@echo "... rgen.s"
 	@echo "... using_pipe.o"
 	@echo "... using_pipe.i"
 	@echo "... using_pipe.s"

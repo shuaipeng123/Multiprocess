@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/shuai/cpp_2/ece650-a3.cpp
+unistd.h
+-
+iostream
+-
+sys/types.h
+-
+sys/wait.h
+-
+signal.h
+-
+vector
+-
+

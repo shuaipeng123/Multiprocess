@@ -10,8 +10,8 @@ set (CMAKE_CXX_FLAGS "-std=c++11 -Wall ${CMAKE_CXX_FLAGS}")
 # create the main executable
 ## add additional .cpp files if needed
 add_executable(using_pipe using_pipe.cpp)
-add_executable(using_exec using_exec.cpp)
-add_executable(using_getopt using_getopt.cpp)
-
-
+add_executable(ece650-a3 ece650-a3.cpp)
+add_executable(rgen regn.cpp)
+add_executable(popen_test popen_test.cpp)
+add_executable(ece650-a2 ece650-a2.cpp)
 

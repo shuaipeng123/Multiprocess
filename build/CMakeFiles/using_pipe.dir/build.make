@@ -34,14 +34,11 @@ RM = /usr/bin/cmake -E remove -f
 # Escaping for special characters.
 EQUALS = =
 
-# The program to use to edit the cache.
-CMAKE_EDIT_COMMAND = /usr/bin/ccmake
-
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/s36peng/cpp2
+CMAKE_SOURCE_DIR = /home/shuai/cpp_2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/s36peng/cpp2/build
+CMAKE_BINARY_DIR = /home/shuai/cpp_2/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/using_pipe.dir/depend.make
@@ -54,17 +51,17 @@ include CMakeFiles/using_pipe.dir/flags.make
 
 CMakeFiles/using_pipe.dir/using_pipe.cpp.o: CMakeFiles/using_pipe.dir/flags.make
 CMakeFiles/using_pipe.dir/using_pipe.cpp.o: ../using_pipe.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/s36peng/cpp2/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/shuai/cpp_2/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/using_pipe.dir/using_pipe.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/using_pipe.dir/using_pipe.cpp.o -c /home/s36peng/cpp2/using_pipe.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/using_pipe.dir/using_pipe.cpp.o -c /home/shuai/cpp_2/using_pipe.cpp
 
 CMakeFiles/using_pipe.dir/using_pipe.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/using_pipe.dir/using_pipe.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/s36peng/cpp2/using_pipe.cpp > CMakeFiles/using_pipe.dir/using_pipe.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/shuai/cpp_2/using_pipe.cpp > CMakeFiles/using_pipe.dir/using_pipe.cpp.i
 
 CMakeFiles/using_pipe.dir/using_pipe.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/using_pipe.dir/using_pipe.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/s36peng/cpp2/using_pipe.cpp -o CMakeFiles/using_pipe.dir/using_pipe.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/shuai/cpp_2/using_pipe.cpp -o CMakeFiles/using_pipe.dir/using_pipe.cpp.s
 
 CMakeFiles/using_pipe.dir/using_pipe.cpp.o.requires:
 .PHONY : CMakeFiles/using_pipe.dir/using_pipe.cpp.o.requires
@@ -100,6 +97,6 @@ CMakeFiles/using_pipe.dir/clean:
 .PHONY : CMakeFiles/using_pipe.dir/clean
 
 CMakeFiles/using_pipe.dir/depend:
-	cd /home/s36peng/cpp2/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/s36peng/cpp2 /home/s36peng/cpp2 /home/s36peng/cpp2/build /home/s36peng/cpp2/build /home/s36peng/cpp2/build/CMakeFiles/using_pipe.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/shuai/cpp_2/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/shuai/cpp_2 /home/shuai/cpp_2 /home/shuai/cpp_2/build /home/shuai/cpp_2/build /home/shuai/cpp_2/build/CMakeFiles/using_pipe.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/using_pipe.dir/depend
 

@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/s36peng/cpp2/using_exec.cpp
+/home/shuai/cpp_2/using_exec.cpp
 unistd.h
 -
 iostream

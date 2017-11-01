@@ -79,10 +79,10 @@ def savelines(l1,l2):
 def run(input, out, err):
 	while True:
 		line=input.readline()
-		if line=='':
+		if line=='\n':
 			break
 		try:    
-                        print line
+                        #print line
 			string_a=re.compile("^\s*a\s+[\"].*[\"]\s+(\(\s*-?\d+,\s*-?\d+\)\s*)*$")
 			string_point=re.compile("(\(\s*-?\d+,\s*-?\d+\))") #this is for points, need to use re.compile first
 			string_street=re.compile("\".+\"")
@@ -165,15 +165,26 @@ def run(input, out, err):
 						if not (checkIfpointIsIntersection(line_segment[position].src) or checkIfpointIsIntersection(line_segment[position].dst)):
 							line_segment[position]=0
 				transform_line_to_vertex_res()
-				out.write("V={\n")
-				for  k,v in vertex.items():
-					out.write("{0}:  ({1:.2f}, {2:.2f})\n".format(k,v.x,v.y))
-				out.write("}\n")
-				out.write("E={\n")
-				for  l in line_segment_ver:
+				out.write("V "+str(len(vertex.items()))+"\n")
+				#for  k,v in vertex.items():
+				#	out.write("{0}:  ({1:.2f}, {2:.2f})\n".format(k,v.x,v.y))
+				#out.write("}\n")
+				#out.write("E={\n")
+				#for  l in line_segment_ver:
+				#	if(l[0]!=0 and l[1]!=0):
+				#		out.write("  <{0},{1}>\n".format(l[0],l[1]))
+				#out.write("}\n")
+				out.write("E {")
+				f=1
+				for l in line_segment_ver:
 					if(l[0]!=0 and l[1]!=0):
-						out.write("  <{0},{1}>\n".format(l[0],l[1]))
+						if(f==1):
+							out.write("<{0},{1}>".format(l[0]-1,l[1]-1))
+						else:
+							out.write(",<{0},{1}>".format(l[0]-1,l[1]-1))
+					f=f+1
 				out.write("}\n")
+				out.flush()
 				del line_segment[:]
 				del line_segment_ver[:]
 				vertex.clear()

@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/shuai/cpp_2/rgen.cpp
+unistd.h
+-
+iostream
+-
+stdlib.h
+-
+fstream
+-
+cmath
+-
+

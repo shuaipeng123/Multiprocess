@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/s36peng/cpp2/using_pipe.cpp
+/home/shuai/cpp_2/using_pipe.cpp
 vector
 -
 sys/types.h

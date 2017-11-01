@@ -79,10 +79,10 @@ def savelines(l1,l2):
 def run(input, out, err):
 	while True:
 		line=input.readline()
-		if line=='\n':
+		if line=='':
 			break
 		try:    
-                        print line
+                        #print line
 			string_a=re.compile("^\s*a\s+[\"].*[\"]\s+(\(\s*-?\d+,\s*-?\d+\)\s*)*$")
 			string_point=re.compile("(\(\s*-?\d+,\s*-?\d+\))") #this is for points, need to use re.compile first
 			string_street=re.compile("\".+\"")
