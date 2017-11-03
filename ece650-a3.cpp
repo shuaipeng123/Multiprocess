@@ -13,7 +13,7 @@ int procB(void) {
         if (line.size () > 0)
             std::cout << line << std::endl;
     }
-    std::cout << "[B] saw EOF" << std::endl;
+   // std::cout << "[B] saw EOF" << std::endl;
     return 0;
 }
 #define MAXLINE 512
@@ -103,7 +103,7 @@ int main(void) {
 //std::cout<<"kids size:"<<kids.size();
     // start process B
     int res =  procB();
-    std::cout <<"B end:"<<  std::endl;
+   // std::cout <<"B end:"<<  std::endl;
 	
 	for (pid_t k : kids) {
         int status;

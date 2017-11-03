@@ -56,7 +56,7 @@ int main(int argc, char **argv) {
     std::istringstream input(line);
     if (line.size() <= 0) {
       if (std::cin.eof()) {
-        std::cerr << "EOF\n";
+        std::cout << "EOF\n";
       } else {
         std::cerr << "no input";
       }

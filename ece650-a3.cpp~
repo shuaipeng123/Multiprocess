@@ -34,7 +34,7 @@ int main(void) {
 		close(AtoC[1]);
  
         //sleep (4);
-        execlp ("./rgen", "rgen","-s","3","-c","10","-l","10", (char*) NULL);
+        execlp ("./rgen", "rgen","-s","3","-c","2","-l","10", (char*) NULL);
         // execl("/bin/ls", "ls", "-l", nullptr);
         perror ("Error from arie");
         return 1;
@@ -103,7 +103,7 @@ int main(void) {
 //std::cout<<"kids size:"<<kids.size();
     // start process B
     int res =  procB();
-    std::cout <<"B end:"<<  std::endl;
+   // std::cout <<"B end:"<<  std::endl;
 	
 	for (pid_t k : kids) {
         int status;

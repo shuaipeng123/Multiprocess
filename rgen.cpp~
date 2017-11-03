@@ -22,7 +22,7 @@
 static const char alp[]="ABCDEFGHIJKLMNOPQRSTUVWXYZ "
 "abcdefghijklmnopqrstuvwxyz";
 
-
+int mistake_time=0;
 char genRandom()  // Random string generator function.
 {
 	int stringLength = sizeof(alp) - 1;
@@ -36,12 +36,12 @@ int main (int argc, char **argv)
   
     
   	int a=get_opt(argc,argv);
-  
+  	
     int srandom=std::abs(random_n(sint_value,2));
     int lrandom=std::abs(random_n(lint_value,5));
     int tmp_s;
 	//std::cout<<srandom;
-	//std::list<std::vector<std::string>> li;
+	std::list<std::vector<std::string>> li;
   while(1){
     int string_length=std::abs(random_n(10,5));
 	
@@ -53,9 +53,10 @@ int main (int argc, char **argv)
 	char s[srandom][string_length];
 	
 	tmp_s=srandom;
+std::vector<std::string> two_tuple;
     while(tmp_s>0){
 	std::vector<std::string> vect;
-	std::vector<std::string> two_tuple;
+	
 	    std::cout<<"a \"";
 	    for(int z=0; z < string_length; z++)
     	{
@@ -79,13 +80,15 @@ int main (int argc, char **argv)
 	    bool flag=true;
 	    for (std::vector<std::string>::iterator it=vect.begin(); it!=vect.end(); ++it)
                 {
-			std::cout<<*it<<"the before is it"<<std::endl;
+			//std::cout<<*it<<"the before is it"<<std::endl;
 			if(*it==foo)
 			{//std::cout<<*it<<" "<<foo;
 			flag=false;
-			std::cerr<<"Error:it is a cycle";}
+			mistake_time++;
+			std::cerr<<"RGen Warning:it is a cycle, fixed automatically\n";}
 						
 		}
+
 		std::string two_e;
 		if(vect.size()!=0)
 			{
@@ -94,28 +97,53 @@ int main (int argc, char **argv)
 			ss_two << x <<y<<v;
 			two_e = ss_two.str();
 			}
-	    for (std::vector<std::string>::iterator it=two_tuple.begin(); it!=two_tuple.end()-1; ++it)
-                {
-			std::cout<<*it<<"the two is it"<<std::endl;
+
+	    for (std::vector<std::string>::iterator it=two_tuple.begin(); it!=two_tuple.end(); ++it)
+                {	
+			/*
+			if(!two_e.empty())
+				std::cout<<*it<<"the two is it"<<two_e<<std::endl;
+			*/
 			if(*it==two_e)
 			{//std::cout<<*it<<" "<<foo;
 			flag=false;
-			std::cerr<<"Error:Same line segment";}
+			mistake_time++;
+			std::cerr<<"RGen Warning:Same line segment, fixed automatically\n";}
 			
 						
 		}
-		
+
+
 	    if(flag)
 	    {
 		std::cout<<" ("<<x<<","<<y<<")";
-		vect.emplace_back(foo);
+		//std::cout<<foo<<"in the flag"<<std::endl;
+		//std::cout<<two_e<<"in the flag"<<std::endl;
+		if(!foo.empty())
+			vect.emplace_back(foo);
+		if(!two_e.empty())
 		two_tuple.emplace_back(two_e);
 		count_line_segment--;
 		}
-	
+		if(mistake_time>25)
+			{
+			std::cerr<<"Error: over 25 times mistaken\n"
+			return 0;
+			}
+/*
+	if(count_line_segment==0){
+  		for (std::vector<std::string>::iterator it=two_tuple.begin(); it!=two_tuple.end(); ++it)
+                {
+			std::cout<<*it<<"the sum is it"<<std::endl;
+			
+			
+						
+		}
+		}
+*/
 	}
 
-	li.push_back(vect);
+	li.push_back(two_tuple);
 	
 	std::cout<<std::endl;
 	
@@ -229,16 +257,18 @@ int index;
         default:
             return 0;
         }
-	/*
+/*	
     std::cout << "sint_value==" << sint_value << " "
               << "nint_value==" << nint_value << " "
               << "lint_value==" << lint_value << " "
               << "cint_value=" << cint_value << std::endl;
- 	*/
+ */	 
 	
     if (optind < argc) {
         std::cout << "Found positional arguments\n";
         for (index = optind; index < argc; index++)
             std::cout << "Non-option argument: " << argv[index] << "\n";
     }
+//std::cout << "sint_value==" << sint_value << " ";
+	 return 0;
 }

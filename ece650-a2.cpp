@@ -107,7 +107,7 @@ int main(int argc, char **argv) {
 
         sp = sp_dp.at(0);
         dp = sp_dp.at(1);
-        if (sp > points || dp > points) {
+        if (sp >= points || dp >= points) {
           flag_s = true;
           std::cerr << "Error: wrong input format for s";
         } else {
