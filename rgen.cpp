@@ -87,17 +87,21 @@ std::vector<std::string> two_tuple;
 			{//std::cout<<*it<<" "<<foo;
 			flag=false;
 			mistake_time++;
-			//std::cerr<<"RGen Warning:it is a cycle, fixed automatically\n";}
+			//std::cerr<<"RGen Warning:it is a cycle, fixed automatically\n";
+			}
 						
 		}
 
 		std::string two_e;
+		std::string two_e_2;
 		if(vect.size()!=0)
 			{
-			std::stringstream ss_two;
+			std::stringstream ss_two,ss_two_2;
 			std::string v=vect.back();
 			ss_two << x <<y<<v;
+			ss_two_2<<v<<x<<y;
 			two_e = ss_two.str();
+			two_e_2 = ss_two_2.str();
 			}
 
 	    for (std::vector<std::string>::iterator it=two_tuple.begin(); it!=two_tuple.end(); ++it)
@@ -110,7 +114,8 @@ std::vector<std::string> two_tuple;
 			{//std::cout<<*it<<" "<<foo;
 			flag=false;
 			mistake_time++;
-			//std::cerr<<"RGen Warning:Same line segment, fixed automatically\n";}
+			//std::cerr<<"RGen Warning:Same line segment, fixed automatically\n";
+			}
 			
 						
 		}
@@ -124,7 +129,9 @@ std::vector<std::string> two_tuple;
 		if(!foo.empty())
 			vect.emplace_back(foo);
 		if(!two_e.empty())
-		two_tuple.emplace_back(two_e);
+			{
+				two_tuple.emplace_back(two_e);
+				two_tuple.emplace_back(two_e_2);}
 		count_line_segment_streets--;
 		}
 		if(mistake_time>25)
