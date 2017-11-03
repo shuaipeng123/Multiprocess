@@ -56,30 +56,33 @@ int main(int argc, char **argv) {
     std::istringstream input(line);
     if (line.size() <= 0) {
       if (std::cin.eof()) {
-        std::cout << "EOF\n";
+        std::cerr  << "EOF\n";
       } else {
-        std::cerr << "no input";
+        std::cerr << "Error:in shortest path no input\n";
       }
     } else {
+	
       char ch;
       input >> ch;
       ws(input);
 
       if (input.fail()) {
-        std::cerr << "Error: need to parse a character";
+        std::cerr << "Error:in shortest path  need to parse a character\n";
       }
 
       if (ch == 'V' && flag_v) {
-
+	std::cout<<line<<std::endl;
+	 nums.clear();
+  	points1.clear();
         // parse an integer
         input >> num;
 
         if (input.fail()) {
-          std::cerr << "Error: need to parse a number";
+          std::cerr << "Error:in shortest path  need to parse a number\n";
           break;
         } else {
           points = num;
-          flag_v = false;
+          flag_v = true;
         }
         // if eof bail out
 
@@ -90,14 +93,14 @@ int main(int argc, char **argv) {
         std::vector<int> sp_dp;
         while (!input.eof()) {
           if (input.eof()) {
-            std::cerr << "Unexpected argument";
+            std::cerr << "Error:in shortest path Unexpected argument\n";
             break;
           }
 
           // parse an integer
           input >> num;
           if (input.fail()) {
-            std::cerr << "Error:no starting point";
+            std::cerr << "Error:in shortest path no starting point\n";
             break;
           } else {
             sp_dp.push_back(num);
@@ -109,7 +112,9 @@ int main(int argc, char **argv) {
         dp = sp_dp.at(1);
         if (sp >= points || dp >= points) {
           flag_s = true;
-          std::cerr << "Error: wrong input format for s";
+	   flag_e = true;
+          flag_v = true;
+          std::cerr << "Error: in shortest path wrong input format for s\n";
         } else {
           shortest_path(points, length, sp, dp);
           flag_s = true;
@@ -118,29 +123,29 @@ int main(int argc, char **argv) {
         }
       } // end s if
       else if (ch == 'E' && flag_e) {
-
+	std::cout<<line<<std::endl;
         nums = split(line, ',');
         // done parsing a line, print the numbers
         length = nums.size();
-
+	/*
         if (length == 1) {
           std::cout
               << "Warning:Since there are no edges, no path can be in this "
                  "graph\n";
         }
-
+	*/
         if (!nums.empty() && length != 1) {
 
           bool flag_point = build_points_from_E(points);
           if (!flag_point) {
             points1.clear();
-            std::cerr << "Error: wrong input for E";
+            std::cerr << "Error: in shortest path  wrong input for E\n";
           } else
-            flag_e = false;
+            flag_e = true;
         }
 
       } else
-        std::cerr << "Error: wrong input"<<std::flush;
+        std::cerr << "Error:in shortest path  wrong input\n"<<std::flush;
     }
   }
 }
@@ -232,13 +237,12 @@ void shortest_path(int points, int length, int sp, int dp) {
       if (it != result.rend() - 1)
         std::cout << *it << "-";
       else
-        std::cout << *it;
+        std::cout << *it<<std::endl;
     }
   } else {
     std::cout << "Error: there is no path";
   }
-  nums.clear();
-  points1.clear();
+ 
 }
 
 bool build_points_from_E(int points) {

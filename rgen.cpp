@@ -45,7 +45,7 @@ int main (int argc, char **argv)
   while(1){
     int string_length=std::abs(random_n(10,5));
 	
-  	int count_line_segment=std::abs(random_n(nint_value,2));
+  	int count_line_segment=std::abs(random_n(nint_value,1));
 	
         
 	int count_s=0;
@@ -71,7 +71,9 @@ std::vector<std::string> two_tuple;
 	}	  
 	//std::cout<<"this is the "<<count_s;
 	    std::cout<<"\"";
-    	while( count_line_segment>0){
+	//std::cout<<"this is line segments"<<count_line_segment<<std::endl;
+	int  count_line_segment_streets= count_line_segment+1;
+    	while( count_line_segment_streets>0){
 	    int x=random_n(cint_value,1);
 	    int y=random_n(cint_value,1);
 		std::stringstream ss;
@@ -85,7 +87,7 @@ std::vector<std::string> two_tuple;
 			{//std::cout<<*it<<" "<<foo;
 			flag=false;
 			mistake_time++;
-			std::cerr<<"RGen Warning:it is a cycle, fixed automatically\n";}
+			//std::cerr<<"RGen Warning:it is a cycle, fixed automatically\n";}
 						
 		}
 
@@ -108,7 +110,7 @@ std::vector<std::string> two_tuple;
 			{//std::cout<<*it<<" "<<foo;
 			flag=false;
 			mistake_time++;
-			std::cerr<<"RGen Warning:Same line segment, fixed automatically\n";}
+			//std::cerr<<"RGen Warning:Same line segment, fixed automatically\n";}
 			
 						
 		}
@@ -123,11 +125,11 @@ std::vector<std::string> two_tuple;
 			vect.emplace_back(foo);
 		if(!two_e.empty())
 		two_tuple.emplace_back(two_e);
-		count_line_segment--;
+		count_line_segment_streets--;
 		}
 		if(mistake_time>25)
 			{
-			std::cerr<<"Error: over 25 times mistaken\n";
+			std::cerr<<"Error: in rgen over 25 times mistaken\n";
 			return 0;
 			}
 /*
@@ -148,7 +150,7 @@ std::vector<std::string> two_tuple;
 	std::cout<<std::endl;
 	
           
-	count_line_segment=std::abs(random_n(nint_value,2));
+	count_line_segment=std::abs(random_n(nint_value,1));
 	tmp_s--;
 	count_s++;
 	loop_count++;
@@ -188,7 +190,7 @@ std::vector<std::string> two_tuple;
 int random_n(int upper_limit,int lower_limit){
 	  std::ifstream urandom("/dev/urandom");
   if (urandom.fail()) {
-        std::cerr << "Error: cannot open /dev/urandom\n";
+        std::cerr << "Error: in rgen cannot open /dev/urandom\n";
         return 1;
     }
     char ch = 'a';
@@ -221,53 +223,69 @@ int index;
 	    svalue = optarg;
 	   
             sint_value = atoi(svalue.c_str());
+		if(sint_value<2)
+			{ 
+			std::cerr << "Error: parameter below the minimum, using the default value" << std::endl;
+			sint_value=10;}
             break;
         case 'n':
             nvalue = optarg;
           
             nint_value = atoi(nvalue.c_str());
+		if(nint_value<1)
+			{ 
+			std::cerr << "Error: parameter below the minimum, using the default value" << std::endl;
+			nint_value=5;}
             break;
 	case 'l':
 	    lvalue = optarg;
 	  
             lint_value = atoi(lvalue.c_str());
+		if(lint_value<5)
+			{ 
+			std::cerr << "Error: parameter below the minimum, using the default value" << std::endl;
+			lint_value=5;}
 	     break;
         case 'c':
 	    
             cvalue = optarg;
 		
             cint_value = atoi(cvalue.c_str());
+		if(cint_value<1)
+			{ 
+			std::cerr << "Error: parameter below the minimum, using the default value" << std::endl;
+			cint_value=20;}
             break;
         case '?':
             if (optopt == 'c')
-                std::cerr << "Error: option -" << optopt
+                std::cerr << "Error: in parameter option -" << optopt
                           << " requires an argument." << std::endl;
 	    else if (optopt == 's')
-                std::cerr << "Error: option -" << optopt
+                std::cerr << "Error: in parameter option -" << optopt
                           << " requires an argument." << std::endl;
             else if (optopt == 'n')
-                std::cerr << "Error: option -" << optopt
+                std::cerr << "Error: in parameter option -" << optopt
                           << " requires an argument." << std::endl;
             else if (optopt == 'l')
-                std::cerr << "Error: option -" << optopt
+                std::cerr << "Error: in parameter option -" << optopt
                           << " requires an argument." << std::endl;
             else
-                std::cerr << "Error: unknown option: " << optopt << std::endl;
+                std::cerr << "Error: in parameter unknown option: " << optopt << std::endl;
             return 1;
         default:
             return 0;
         }
-/*	
+	/*
     std::cout << "sint_value==" << sint_value << " "
               << "nint_value==" << nint_value << " "
               << "lint_value==" << lint_value << " "
               << "cint_value=" << cint_value << std::endl;
- */	 
+  */
 	
     if (optind < argc) {
-        std::cout << "Found positional arguments\n";
+        std::cerr << "Error: in parameter found positional arguments\n";
         for (index = optind; index < argc; index++)
-            std::cout << "Non-option argument: " << argv[index] << "\n";
+            std::cerr << "Error: Non-option argument: " << argv[index] << "\n";
     }
 //std::cout << "sint_value==" << sint_value << " ";
 	 return 0;

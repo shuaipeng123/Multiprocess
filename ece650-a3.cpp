@@ -17,7 +17,8 @@ int procB(void) {
     return 0;
 }
 #define MAXLINE 512
-int main(void) {
+int main(int argc, char **argv) {
+	
 	std::vector<pid_t> kids;
 	int AtoB[2];
     pipe(AtoB);
@@ -34,7 +35,7 @@ int main(void) {
 		close(AtoC[1]);
  
         //sleep (4);
-        execlp ("./rgen", "rgen","-s","3","-c","2","-l","10", (char*) NULL);
+        execvp ("./rgen",argv);
         // execl("/bin/ls", "ls", "-l", nullptr);
         perror ("Error from arie");
         return 1;
@@ -64,13 +65,14 @@ int main(void) {
     }
   	
 	kids.push_back(kid);
-	std::cout <<"B start:"<<  std::endl;
+	//std::cout <<"B start:"<<  std::endl;
 	write_a2=popen("./ece650-a2","w");
 	kid=fork();
 	if(kid==0){
 		fpin=fdopen(AtoB[0],"r");
 	while(fgets(line, MAXLINE, fpin) != NULL){
-			std::cout<<line;
+			//if(line[0]=='V'||line[0]=='E')			
+			//std::cout<<line;
 			fputs(line,write_a2);
 			fflush(write_a2);
 			}
@@ -117,3 +119,5 @@ int main(void) {
 
     return 0;
 }
+
+
