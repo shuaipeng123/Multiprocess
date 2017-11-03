@@ -13,7 +13,7 @@ int procB(void) {
         if (line.size () > 0)
             std::cout << line << std::endl;
     }
-    //std::cout << "[B] saw EOF" << std::endl;
+    std::cout << "[B] saw EOF" << std::endl;
     return 0;
 }
 #define MAXLINE 512
@@ -34,7 +34,7 @@ int main(void) {
 		close(AtoC[1]);
  
         //sleep (4);
-        execlp ("./rgen", "rgen","-s","3","-c","10", (char*) NULL);
+        execlp ("./rgen", "rgen","-s","3","-c","2","-l","10", (char*) NULL);
         // execl("/bin/ls", "ls", "-l", nullptr);
         perror ("Error from arie");
         return 1;
@@ -62,7 +62,7 @@ int main(void) {
         std::cerr << "Error: could not fork\n";
         return 1;
     }
-  	sleep(3);
+  	
 	kids.push_back(kid);
 	std::cout <<"B start:"<<  std::endl;
 	write_a2=popen("./ece650-a2","w");
@@ -100,15 +100,19 @@ int main(void) {
 	dup2(AtoB[1],STDOUT_FILENO);
     close(AtoB[0]);
     close(AtoB[1]);
+//std::cout<<"kids size:"<<kids.size();
     // start process B
     int res =  procB();
     std::cout <<"B end:"<<  std::endl;
-	std::cout<<"kids size:"<<kids.size();
+	
 	for (pid_t k : kids) {
         int status;
         kill (k, SIGTERM);
         waitpid(k, &status, 0);
     }
+//dup2(AtoB[0],STDIN_FILENO);
+  //  close(AtoB[1]);
+    //close(AtoB[0]);
     std::cout << "ls returned status: " << res << std::endl;
 
     return 0;

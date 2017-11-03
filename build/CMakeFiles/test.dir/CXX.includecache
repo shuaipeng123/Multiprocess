@@ -6,23 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/shuai/cpp_2/rgen.cpp
-unistd.h
+/home/shuai/cpp_2/test.cpp
+sstream
 -
 iostream
 -
-stdlib.h
--
-fstream
--
-cmath
--
-tuple
--
 vector
 -
-list
--
-sstream
+string
 -
 

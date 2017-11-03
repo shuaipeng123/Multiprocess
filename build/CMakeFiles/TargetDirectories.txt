@@ -2,4 +2,5 @@
 /home/shuai/cpp_2/build/CMakeFiles/ece650-a3.dir
 /home/shuai/cpp_2/build/CMakeFiles/popen_test.dir
 /home/shuai/cpp_2/build/CMakeFiles/rgen.dir
+/home/shuai/cpp_2/build/CMakeFiles/test.dir
 /home/shuai/cpp_2/build/CMakeFiles/using_pipe.dir

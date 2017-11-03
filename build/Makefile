@@ -151,6 +151,19 @@ rgen/fast:
 .PHONY : rgen/fast
 
 #=============================================================================
+# Target rules for targets named test
+
+# Build rule for target.
+test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test
+.PHONY : test
+
+# fast build rule for target.
+test/fast:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
+.PHONY : test/fast
+
+#=============================================================================
 # Target rules for targets named using_pipe
 
 # Build rule for target.
@@ -259,6 +272,30 @@ rgen.cpp.s:
 	$(MAKE) -f CMakeFiles/rgen.dir/build.make CMakeFiles/rgen.dir/rgen.cpp.s
 .PHONY : rgen.cpp.s
 
+test.o: test.cpp.o
+.PHONY : test.o
+
+# target to build an object file
+test.cpp.o:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/test.cpp.o
+.PHONY : test.cpp.o
+
+test.i: test.cpp.i
+.PHONY : test.i
+
+# target to preprocess a source file
+test.cpp.i:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/test.cpp.i
+.PHONY : test.cpp.i
+
+test.s: test.cpp.s
+.PHONY : test.s
+
+# target to generate assembly for a file
+test.cpp.s:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/test.cpp.s
+.PHONY : test.cpp.s
+
 using_pipe.o: using_pipe.cpp.o
 .PHONY : using_pipe.o
 
@@ -295,6 +332,7 @@ help:
 	@echo "... popen_test"
 	@echo "... rebuild_cache"
 	@echo "... rgen"
+	@echo "... test"
 	@echo "... using_pipe"
 	@echo "... ece650-a2.o"
 	@echo "... ece650-a2.i"
@@ -308,6 +346,9 @@ help:
 	@echo "... rgen.o"
 	@echo "... rgen.i"
 	@echo "... rgen.s"
+	@echo "... test.o"
+	@echo "... test.i"
+	@echo "... test.s"
 	@echo "... using_pipe.o"
 	@echo "... using_pipe.i"
 	@echo "... using_pipe.s"

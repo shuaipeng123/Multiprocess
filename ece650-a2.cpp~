@@ -140,7 +140,7 @@ int main(int argc, char **argv) {
         }
 
       } else
-        std::cerr << "Error: wrong input";
+        std::cerr << "Error: wrong input"<<std::flush;
     }
   }
 }

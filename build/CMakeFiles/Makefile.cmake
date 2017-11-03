@@ -43,5 +43,6 @@ SET(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/ece650-a3.dir/DependInfo.cmake"
   "CMakeFiles/popen_test.dir/DependInfo.cmake"
   "CMakeFiles/rgen.dir/DependInfo.cmake"
+  "CMakeFiles/test.dir/DependInfo.cmake"
   "CMakeFiles/using_pipe.dir/DependInfo.cmake"
   )

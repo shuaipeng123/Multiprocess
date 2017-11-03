@@ -14,4 +14,5 @@ add_executable(ece650-a3 ece650-a3.cpp)
 add_executable(rgen rgen.cpp)
 add_executable(popen_test popen_test.cpp)
 add_executable(ece650-a2 ece650-a2.cpp)
+add_executable(test test.cpp)
 

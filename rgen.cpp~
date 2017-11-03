@@ -4,6 +4,10 @@
 #include <stdlib.h>
 #include <fstream>
 #include <cmath>
+#include <tuple>
+#include <vector>
+#include <list>
+#include <sstream>
 /// main() must be declared with arguments
 /// otherwise command line arguments are ignored
  
@@ -14,7 +18,8 @@
     int lint_value=5;
  
     int cint_value=20;
-static const char alp[]="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    int loop_count=0;
+static const char alp[]="ABCDEFGHIJKLMNOPQRSTUVWXYZ "
 "abcdefghijklmnopqrstuvwxyz";
 
 
@@ -32,32 +37,121 @@ int main (int argc, char **argv)
     
   	int a=get_opt(argc,argv);
   
-    int srandom=random_n(sint_value,2);
-    
-   
-  
+    int srandom=std::abs(random_n(sint_value,2));
+    int lrandom=std::abs(random_n(lint_value,5));
+    int tmp_s;
+	//std::cout<<srandom;
+	//std::list<std::vector<std::string>> li;
+  while(1){
     int string_length=std::abs(random_n(10,5));
 	
-  	int count_line_segment=random_n(nint_value,1);
-    while(srandom>0){
+  	int count_line_segment=std::abs(random_n(nint_value,2));
+	
+        
+	int count_s=0;
+	
+	char s[srandom][string_length];
+	
+	tmp_s=srandom;
+    while(tmp_s>0){
+	std::vector<std::string> vect;
+	std::vector<std::string> two_tuple;
 	    std::cout<<"a \"";
 	    for(int z=0; z < string_length; z++)
     	{
-        std::cout<< genRandom();
+	s[count_s][z]=genRandom();
+        
 
     	}
+	
+	 for(int z=0; z < string_length; z++)
+    	{
+		std::cout<< s[count_s][z];
+	}	  
+	//std::cout<<"this is the "<<count_s;
 	    std::cout<<"\"";
     	while( count_line_segment>0){
 	    int x=random_n(cint_value,1);
 	    int y=random_n(cint_value,1);
-	    std::cout<<" ("<<x<<","<<y<<")";
+		std::stringstream ss;
+		ss << x <<y;
+		std::string foo = ss.str();
+	    bool flag=true;
+	    for (std::vector<std::string>::iterator it=vect.begin(); it!=vect.end(); ++it)
+                {
+			std::cout<<*it<<"the before is it"<<std::endl;
+			if(*it==foo)
+			{//std::cout<<*it<<" "<<foo;
+			flag=false;
+			std::cerr<<"Error:it is a cycle";}
+						
+		}
+		std::string two_e;
+		if(vect.size()!=0)
+			{
+			std::stringstream ss_two;
+			std::string v=vect.back();
+			ss_two << x <<y<<v;
+			two_e = ss_two.str();
+			}
+	    for (std::vector<std::string>::iterator it=two_tuple.begin(); it!=two_tuple.end()-1; ++it)
+                {
+			std::cout<<*it<<"the two is it"<<std::endl;
+			if(*it==two_e)
+			{//std::cout<<*it<<" "<<foo;
+			flag=false;
+			std::cerr<<"Error:Same line segment";}
+			
+						
+		}
+		
+	    if(flag)
+	    {
+		std::cout<<" ("<<x<<","<<y<<")";
+		vect.emplace_back(foo);
+		two_tuple.emplace_back(two_e);
 		count_line_segment--;
+		}
+	
 	}
+
+	li.push_back(vect);
+	
 	std::cout<<std::endl;
-	count_line_segment=random_n(nint_value,1);
-	srandom--;
+	
+          
+	count_line_segment=std::abs(random_n(nint_value,2));
+	tmp_s--;
+	count_s++;
+	loop_count++;
     }
+ //for(int i=0; i < srandom; i++){
+//	   for(int z=0; z < string_length; z++)
+  //  	{
+//	std::cout<<s[i][z]<<"this is "<<i<<"this is"<<z<<std::endl;
+        
+
+  //  	}
+//	}
     std::cout<<"g"<<std::endl;
+	sleep(lrandom);
+	int count_r=0;
+	int tmp_r=srandom;
+	
+	while(tmp_r>0){
+		 std::cout<<"r \"";
+	 for(int z=0; z < string_length; z++)
+    	{
+		std::cout<< s[count_r][z];
+	}	  
+	  std::cout<<"\"";	
+		//std::cout<<"this is the "<<count_r;
+	    std::cout<<std::endl;
+		count_r++;
+		tmp_r--;
+		}
+	
+}
     return 0;
 }
 
@@ -72,12 +166,12 @@ int random_n(int upper_limit,int lower_limit){
     char ch = 'a';
     // cast to integer to see the numeric value of the character
      urandom.read(&ch, 1);
-	while((int)ch%(upper_limit)<lower_limit){
+	while(std::abs((int)ch%(upper_limit+1))<lower_limit){
 	
     	  urandom.read(&ch, 1);
          // std::cout << "Random character: " << (int)ch << "\n";
 	}
-	return (int)ch%(upper_limit);
+	return (int)ch%(upper_limit+1);
 }
 
 

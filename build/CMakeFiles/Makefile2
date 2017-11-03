@@ -193,13 +193,48 @@ clean: CMakeFiles/rgen.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/test.dir
+
+# All Build rule for target.
+CMakeFiles/test.dir/all:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/depend
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/shuai/cpp_2/build/CMakeFiles  5
+	@echo "Built target test"
+.PHONY : CMakeFiles/test.dir/all
+
+# Include target in all.
+all: CMakeFiles/test.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shuai/cpp_2/build/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shuai/cpp_2/build/CMakeFiles 0
+.PHONY : CMakeFiles/test.dir/rule
+
+# Convenience name for target.
+test: CMakeFiles/test.dir/rule
+.PHONY : test
+
+# clean rule for target.
+CMakeFiles/test.dir/clean:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/clean
+.PHONY : CMakeFiles/test.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/test.dir/clean
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/using_pipe.dir
 
 # All Build rule for target.
 CMakeFiles/using_pipe.dir/all:
 	$(MAKE) -f CMakeFiles/using_pipe.dir/build.make CMakeFiles/using_pipe.dir/depend
 	$(MAKE) -f CMakeFiles/using_pipe.dir/build.make CMakeFiles/using_pipe.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/shuai/cpp_2/build/CMakeFiles  5
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/shuai/cpp_2/build/CMakeFiles  6
 	@echo "Built target using_pipe"
 .PHONY : CMakeFiles/using_pipe.dir/all
 
